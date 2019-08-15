@@ -51,12 +51,12 @@ function prepareGallery(){
 function showpic(whichpic){
 	if (!document.getElementById("placeholder")) {return false;}
 	var source=whichpic.getAttribute("href");
-	var placeholder=document.getElementById("placeholder");
+	var placeholder=document.getElementById("placeholder"); //获取图片占位符
 	if (placeholder.nodeName!="IMG") {return false;}
-	placeholder.setAttribute("src",source);
-	if (document.getElementById("description")) {
-		if(whichpic.getAttribute("title")){
-			var text=whichpic.getAttribute("title");
+	placeholder.setAttribute("src",source);  //占位符设置图片链接
+	if (document.getElementById("description")){ //获取描述占位符
+		if(whichpic.getAttribute("title")){  //获取描述
+			var text=whichpic.getAttribute("title"); //设置描述占位符处的文字
 		}
 		else{
 			var text="";
@@ -67,7 +67,7 @@ function showpic(whichpic){
 			description.firstChild.nodeValue=text;
 		}
 	}
-	return true;
+	return true
 }
 addLoadEvent(preparePlaceholder);
 addLoadEvent(prepareGallery);
